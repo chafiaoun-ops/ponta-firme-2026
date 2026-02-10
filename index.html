@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ponta Firme - Carnaval</title>
+<link rel="icon" type="image/png" href="./vaquinhafav.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;500;700&display=swap');
+      
+      :root {
+        --primary: #7c3aed;
+        --secondary: #f59e0b; /* Alterado de Rosa (#db2777) para Amarelo/Laranja */
+        --accent: #fbbf24;
+      }
+
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: #0f0518;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, .carnival-font {
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 0.05em;
+      }
+      
+      /* Premium Background */
+      .bg-carnival {
+        background: 
+          radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.4), transparent 25%), 
+          /* Alterado o segundo gradiente de Rosa para Dourado */
+          radial-gradient(circle at 85% 30%, rgba(251, 191, 36, 0.3), transparent 25%),
+          linear-gradient(180deg, #0f0518 0%, #1e0b36 100%);
+        min-height: 100vh;
+        background-attachment: fixed;
+      }
+
+      /* Premium Glass Effect */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .glass-card:active {
+        transform: scale(0.98);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+      }
+
+      /* Animations */
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        z-index: 50;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        to { transform: translateY(100vh) rotate(720deg); }
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "firebase/": "https://esm.sh/firebase@^12.9.0/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
